@@ -16,3 +16,21 @@ hook.Add( 'HUDPaint', 'hudTest', function()
     end
 end )
 ```
+```C#
+local imag = texture.Create( 'gradient' )
+imag:SetSize( 100, 100 )
+imag:Download( 'https://i.imgur.com/9TsJ3Id.png' )
+
+local menu = vgui.Create( 'DFrame' )
+menu:SetSize( ScrW() * 0.4, ScrH() * 0.6 )
+menu:Center()
+menu:MakePopup()
+
+local btn = vgui.Create( 'DButton', menu )
+btn:Dock( FILL )
+btn.Paint = function( self, w, h )
+    surface.SetDrawColor( Color(255,255,255) )
+	surface.SetMaterial( texture.Get( 'gradient' ) )
+	surface.DrawTexturedRect( 0, 0, w, h )
+end
+```
