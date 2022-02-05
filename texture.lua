@@ -206,6 +206,8 @@ end
 
 -- Thanks to SuperiorServers.co
 
+local scrw, scrh = ScrW(), ScrH()
+
 texture = {}
 
 local TEXTURE = {
@@ -405,7 +407,7 @@ function TEXTURE:RenderManual( func, callback )
 							w = w,
 						} ) )
 					end
-				render.SetViewPort( 0, 0, ScrW(), ScrH() )
+				render.SetViewPort( 0, 0, scrw, scrh )
 			render.SetRenderTarget( oldRT )
 
 			self.IMaterial = Material( 'data/' .. self.File )
